@@ -8,7 +8,7 @@ import { BldgModule } from './bldg/bldg.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      port: 5432,
+      port: parseInt(process.env.CLOUDSQL_PORT!),
       host: process.env.CLOUDSQL_HOST,
       username: process.env.CLOUDSQL_USER,
       password: process.env.CLOUDSQL_PASS,
