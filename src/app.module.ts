@@ -15,15 +15,15 @@ import { ParkingLotModule } from './parking/parking.module';
       type: 'postgres',
       port: parseInt(process.env.CLOUDSQL_PORT!),
       host:
-        // process.env.CLOUDSQL_HOST ||
-        // `/cloudsql/${process.env.CLOUDSQL_CONNECTION_NAME}` ||
-        '34.64.248.193',
-      // username: process.env.CLOUDSQL_USER,
-      username: 'codelab',
-      // password: process.env.CLOUDSQL_PASS,
-      password: 'codelab1234',
-      // database: process.env.CLOUDSQL_DB,
-      database: 'codelab-nest',
+        process.env.CLOUDSQL_HOST ||
+        `/cloudsql/${process.env.CLOUDSQL_CONNECTION_NAME}`,
+      // '34.64.248.193',
+      username: process.env.CLOUDSQL_USER,
+      // username: 'codelab',
+      password: process.env.CLOUDSQL_PASS,
+      // password: 'codelab1234',
+      database: process.env.CLOUDSQL_DB,
+      // database: 'codelab-nest',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
